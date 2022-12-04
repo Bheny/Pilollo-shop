@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Footer>
+        
       <section class="text-center">
 
 <a href="#main">
@@ -109,7 +109,7 @@
            </div>
         </div>
      </section>
-    </Footer>
+   
     </div>
 </template>
     <script setup>
