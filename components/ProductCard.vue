@@ -1,19 +1,17 @@
 <template>
    
         
-        <div v-for="product in products" v-bind:key="product"
+        <div 
           class="item w-full lg:w-40 bg-white rounded-lg shadow-lg mr-2 mb-2  inline-block"
         >
           <!-- Top card -->
           <div class="relative">
             <div class="h-48">
-              <a
-                href="/Products/clothing-textiles/sports-wears/cardigans/99/ankara-bomber-jacket/"
-                ><img
-                  src="~/assets/stripes.jpg"
+              <img
+                  :src="product?.image"
                   class=" bg-current rounded-tl-lg rounded-tr-lg bg-gray-300  h-full"
                 
-              /></a>
+              />
             </div>
             <div class="bg-transparent absolute text-center w-full top-0 my-1 mx-1">
               <div class="mr-2 pt-1 bg-white w-8 h-8 rounded-full float-right">
@@ -35,26 +33,25 @@
             <a
               href="/Products/clothing-textiles/sports-wears/cardigans/99/ankara-bomber-jacket/ "
             >
-              <span class="text-sm block"> Ankara bomber …</span></a
+              <span class="text-sm block truncate">  {{ product?.title }}</span></a
             >
             <span class="text-xs text-gray-600 block">Pilollo tribe</span>
 
-            <span class="block text-xs">
-              <span class="text-red-700">
-                <i class="ion-ios-star-half"></i>
-                <i class="ion-ios-star-outline"></i>
-                <i class="ion-ios-star-outline"></i>
-                <i class="ion-ios-star-outline"></i>
-                <i class="ion-ios-star-outline"></i>
+            <span class="block flex text-xs">
+              <span class=" flex text-red-700">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+  <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+</svg> 
+
               </span>
-              <i class="">(0)</i>
+              <i class="text-sm mt-1">{{product?.rating?.rate}} ({{product?.rating?.count}})</i>
             </span>
 
             <!-- div class="rounded-full h-6 pl-2 mt-1 bg-yellow-400 flex text-sm ">
                 <img src="/static/img/store.png" class="mr-2"><span>Pilollo tribe</span>
               </div -->
             <span class="font-extrabold text-sm block inline-block"
-              >GHC 105.00
+              >GHC {{product?.price }}
             </span>
           </div>
         </div>
@@ -62,5 +59,5 @@
 </template>
 
 <script setup>
-const { products } = defineProps(['products'])
+const { product } = defineProps(['product'])
 </script>

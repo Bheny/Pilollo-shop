@@ -213,7 +213,10 @@
       <div
         class="grid gap-2 grid-cols-2 md:grid-cols-4 p-2 lg:grid-cols-7 lg:gap-2"
       >
-        <ProductCard :products="6"/>
+        <div v-for="product in products" v-bind:key="product">
+          <ProductCard :product="product"/>
+        </div>
+        
       </div>
     </section>
     <section class="bg-gray-100">
@@ -250,7 +253,9 @@
       <div
         class="grid gap-2 grid-cols-2 md:grid-cols-4 p-2 lg:grid-cols-7 lg:gap-2"
       >
-        <ProductCard :products="6" />
+      <div v-for="product in products" v-bind:key="product">
+          <ProductCard v-if="(product.category == category)" :product="product"/>
+        </div>
       </div>
     </section>
 
@@ -378,18 +383,21 @@
 </template>
 
 <script setup>
-const categories = [
-  "Clothing & Textiles",
-  "Foot wears",
-  "Jewelry & Accesories",
-  "Custome Arts & Craft"
-];
+// v-if="product.category.includes('clothing','jewelery')"
+// const categories = [
+//   "Clothing & Textiles",
+//   "Foot wears",
+//   "Jewelry & Accesories",
+//   "Custome Arts & Craft"
+// ];
+const { data: categories }= await useFetch('https://fakestoreapi.com/products/categories')
 const catalogues = [
   "Anniversary",
   "Gifts For Him",
   "Custom Boxes",
   "Gifts For Her",
 ];
+const { data: products } = await useFetch('https://fakestoreapi.com/products')
 var timer = "loading";
 let vm = this;
 const months = [

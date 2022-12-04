@@ -15,8 +15,7 @@
                 <div class="text-center w-full pt-4">
                   
                     <h6 class="text-gray-800 text-xl text-center mb-6">
-                      Join millions of designers sharing their expeiriences and
-                      bonding with each other
+                      Before We Begin ..
                     </h6>
                 
                 </div>
@@ -53,11 +52,23 @@
                     name="csrfmiddlewaretoken"
                     value="Ug6rKfZO6DUaVXMcuUpX5wg02X0K3rIIve80YtpBYkHZ8oixIn2LwOMyncGjfmpJ"
                   />
-                  <div class="mb-4">
+                  <div :class="[emailActive ? 'block':'hidden']" class="mb-4">
                     <input
                       type="email"
                       placeholder="Email"
-                      id="email"
+                     
+                      required="required"
+                      class="p-3 rounded-lg focus:border focus:bg-gray-300 border-b w-full"
+                    />
+                    <div class="w-full px-auto">
+                      <div class="mx-auto text-center">
+                        OR
+                      </div>
+                    </div>
+                    <input
+                      type="text"
+                      placeholder="Phone"
+                      
                       required="required"
                       class="p-3 rounded-lg focus:border focus:bg-gray-300 border-b w-full"
                     />
@@ -65,16 +76,15 @@
                       >Confirmation link will be sent to it</span
                     >
                     <button
-                      id="emailbtn"
                       type="button"
-                      onclick="showContents('accnt');showContents('emailbtn');"
-                      class="hidden p-2 bg-red-700 w-full rounded-lg text-white font-extrabold mt-4"
+                      @click="usernameActive=true ; emailActive=false"
+                      class=" p-2 bg-red-700 w-full rounded-lg text-white font-extrabold mt-4"
                     >
                       Continue
                     </button>
                   </div>
-                  <div id="accnt">
-                    <div class="w-full mb-4">
+                  <div id="accnt" class="w-full ">
+                    <div :class="[usernameActive ? 'block':'hidden']" class="w-full mb-4">
                       <input
                         type="text"
                         placeholder="Username"
@@ -86,7 +96,7 @@
                         >make it a unique one</span
                       >
                     </div>
-                    <div class="mb-4">
+                    <div class="hidden mb-4">
                       <div class="bg-white border-b w-full focus:border">
                         <input
                           type="password"
@@ -116,7 +126,7 @@
                         </ul></span
                       >
                     </div>
-                    <div class="mb-4">
+                    <div class=" hidden mb-4">
                       <div class="bg-white border-b w-full focus:border">
                         <input
                           type="password"
@@ -137,7 +147,7 @@
                         verification.</span
                       >
                     </div>
-                    <div class="mb-4">
+                    <div class="hidden mb-4">
                       <label class="w-full"
                         ><input
                           type="checkbox"
@@ -149,7 +159,8 @@
                         ></label
                       >
                     </div>
-                    <button
+                    <div class="hidden">
+                      <button
                       type="submit"
                       class="p-2 bg-red-700 w-full rounded-lg text-white font-extrabold"
                     >
@@ -161,6 +172,7 @@
                     >
                       Are you already part of us ? then Login
                     </p>
+                    </div>
                   </div>
                 </form>
               </div>
@@ -172,6 +184,9 @@
   </div>
 </template>
 <script setup>
+let emailActive = true;
+let usernameActive = false;
+
 definePageMeta({
   layout: 'auth'
 })
