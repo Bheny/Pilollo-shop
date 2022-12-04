@@ -9,7 +9,7 @@
       </div>
       <div class="pt-0">
         <div class="hidden lg:block pt-2">
-          <img src="/static/img/Pilollo.png" class="w-40" />
+          <img src="~/assets/Pilollo.png" class="w-40" />
         </div>
         <div class="hidden">
           <span
