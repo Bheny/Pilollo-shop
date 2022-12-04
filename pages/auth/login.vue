@@ -5,7 +5,7 @@
     </div>
     <div class="md:flex">
       <div class="hidden md:block w-2/3 h-screen border-b bg-cover p-12 flex">
-        <img src="/static/img/3.PNG" class="w-64 h-64" />
+        <img src="~/assets/login.PNG" class="w-64 h-64" />
       </div>
       <div class="pt-0">
         <div class="hidden lg:block pt-2">
