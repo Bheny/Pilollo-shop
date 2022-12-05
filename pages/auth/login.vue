@@ -89,14 +89,15 @@
 </template>
 
 <script setup>
-
+const usernameActive = ref(true)
+const passwordActive = ref(false)
 
 definePageMeta({
   layout: 'auth'
 })
 </script>
 
-<script >
+<!-- <script >
 export default({
   data(){
     return {
@@ -118,4 +119,4 @@ export default({
   }
   }
 })
-</script>
+</script> -->
