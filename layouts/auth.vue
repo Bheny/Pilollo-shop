@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="w-full border-b p-4 fixed bg-white shadow-b-2xl">
+        <div class="w-full   p-4 fixed bg-white shadow-b-2xl">
           <div class="w-24 inline-block float-left relative">
             <img src="~/assets/Pilollo.png" />
           </div>
@@ -15,7 +15,7 @@
           </div>
         </div>
         <slot />
-        <FooterComponent />
+       
     </div>
 </template>
 

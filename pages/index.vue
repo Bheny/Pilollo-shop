@@ -251,15 +251,15 @@
         </div>
       </div>
       <div
-        class="grid gap-2 grid-cols-2 md:grid-cols-4 p-2 lg:grid-cols-7 lg:gap-2"
+        class="grid gap-2 grid-cols-2 md:grid-cols-4 p-2 lg:grid-cols-6 xl:grid-cols-8 lg:gap-2"
       >
-      <div v-for="product in products" v-bind:key="product">
-          <ProductCard v-if="(product.category == category)" :product="product"/>
+      <div v-for="product in products.filter((element) => { return element.category == category})" v-bind:key="product">
+          <ProductCard  :product="product"/>
         </div>
       </div>
     </section>
 
-    <section :class="[(categories.length%2) == 0 ? 'bg-white ':' bg-gray-100' ]" class="p-2 mt-6 ">
+    <section :class="[categories.length%2 == 0 ? 'bg-white ':' bg-gray-100' ]" class="p-2 mt-6 ">
       <div class="w-full p-4 text-left lg:flex">
         <h2 class="text-xl font-extrabold inline-block">Most Viewed</h2>
         <div class="float-right">

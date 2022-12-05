@@ -2,14 +2,14 @@
    
         
         <div 
-          class="item w-full lg:w-40 bg-white rounded-lg shadow-lg mr-2 mb-2  inline-block"
+          class="item w-full lg:w-full bg-white rounded-lg shadow-lg mr-2 mb-2  inline-block"
         >
           <!-- Top card -->
           <div class="relative">
-            <div class="h-48">
+            <div class="h-48 ">
               <img
                   :src="product?.image"
-                  class=" bg-current rounded-tl-lg rounded-tr-lg bg-gray-300  h-full"
+                  class=" bg-current rounded-tl-lg rounded-tr-lg bg-transparent  h-full object-center object-contain"
                 
               />
             </div>

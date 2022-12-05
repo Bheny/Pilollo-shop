@@ -52,7 +52,7 @@
                     name="csrfmiddlewaretoken"
                     value="Ug6rKfZO6DUaVXMcuUpX5wg02X0K3rIIve80YtpBYkHZ8oixIn2LwOMyncGjfmpJ"
                   />
-                  <div :class="[emailActive ? 'block':'hidden']" class="mb-4">
+                  <div :class="[usernameActive ? 'hidden':'block']" class="mb-4">
                     <input
                       type="email"
                       placeholder="Email"
@@ -77,7 +77,7 @@
                     >
                     <button
                       type="button"
-                      @click="usernameActive=true ; emailActive=false"
+                      @click="usernameActive=true"
                       class=" p-2 bg-red-700 w-full rounded-lg text-white font-extrabold mt-4"
                     >
                       Continue
