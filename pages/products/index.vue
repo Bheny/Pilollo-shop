@@ -1,6 +1,6 @@
 <template>
   <div class="w-full pt-24 lg:pt-32">
-    <section class="p-2 w-full border-l overflow-y-scroll h-screen">
+    <section class="p-2 w-full border-l  h-screen">
       <div class="w-full">
         <div class="float-left lg:float-right gap-3 p-2 relative w-full">
           <button
