@@ -24,35 +24,37 @@
               >welcome <b id="wname">Back</b> 🤗, care for ride through our
               village .</span
             > -->
-            <h1>- username: {{ usernameActive }}  | password: {{ passwordActive }}</h1>
-            <h2 class="text-lg font-bold">Sign In to continue </h2>
-            <span class="text-sm">Sign In or Register with your email address </span>
+           
+            <h2 class="text-lg font-bold">{{ salutations }}</h2>
+            <span class="text-sm">{{ message }} </span>
           </div>
           <!---->
           <!---->
-          <div :class="[usernameActive ? 'block':'hidden']" class="w-full p-4">
+          <div :class="[ EmailActive ? 'hidden':'block' ]" class="w-full p-4">
             <input
               type="text"
               placeholder="Username or Email"
               required="required"
               class="p-2 text-black border-b-2 w-full focus:border focus:border-black"
+              v-model="email"
             />
             <button
               class="mt-3 rounded-lg p-2 w-full bg-red-700 text-white font-bold hover:bg-white hover:text-red-700 hover:border-red-700 border"
-              @click="changeTo('password') ">
+              @click="checkEmail()">
              Continue
             </button>
           </div>
-          <div  :class="[passwordActive ? 'block':'hidden']" class="w-full p-4">
+          <div  :class="[ EmailActive ? 'Block':'hidden' ]" class="w-full p-4">
             <input
               type="password"
               placeholder="Password"
               required="required"
               class="p-2 text-black border-b-2 w-full focus:border focus:border-black"
+              v-model="password"
             />
-            <div class="inline-block">
-              <input type="checkbox" />
-              <span class="ml-3 text-sm">Remember me </span>
+            <div class="inline-block mt-2">
+              <input type="checkbox" class="w-4 h-4 rounded-lg " />
+              <span class="ml-3  text-sm">Remember me </span>
             </div>
             <div class="float-right">
               <a href="/password_reset/"
@@ -64,8 +66,8 @@
             <div class="w-full p-4">
             <button
               class="mt-3 rounded-lg p-2 w-full bg-red-700 text-white font-bold hover:bg-white hover:text-red-700 hover:border-red-700 border"
-              @click="changeTo('username') ">
-             Continue
+              @click="">
+             {{ btn }}
             </button>
           </div>
           </div>
@@ -89,8 +91,25 @@
 </template>
 
 <script setup>
-const usernameActive = ref(true)
-const passwordActive = ref(false)
+let EmailActive = ref(false)
+let email = ref("bernard@tay.htu.gh")
+let password = ref(null)
+let btn = ref("Continue")
+
+// const passwordActive = ref(false)
+let salutations = ref("Sign In to continue ")
+let message = ref("Sign In or Register with your email address")
+
+const checkEmail = () => {
+  console.log(typeof(email.value), email.value == 'bernard@tay.htu')
+  if(email.value == 'bernard@tay.htu'){
+    EmailActive.value = true
+    salutations.value = "Hey Benny! You're Back";
+    message.value = "Great to see you again, Enter your password to continue";
+    btn.value = "Enter Shop"
+}
+}
+
 
 definePageMeta({
   layout: 'auth'

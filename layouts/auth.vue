@@ -2,7 +2,7 @@
     <div>
         <div class="w-full   p-4 fixed bg-white shadow-b-2xl">
           <div class="w-24 inline-block float-left relative">
-            <img src="~/assets/Pilollo.png" />
+            <NuxtLink to="/"><img src="~/assets/Pilollo.png" /></NuxtLink>
           </div>
           <div onclick="showContents('signup');" class="hidden float-right">
             <svg viewBox="0 0 20 20" fill="currentColor" class="x w-6 h-6">

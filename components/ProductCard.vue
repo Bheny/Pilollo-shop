@@ -1,6 +1,6 @@
 <template>
-   
-        
+   <div>
+      <NuxtLink :to="`/products/${product?.id}`">
         <div 
           class="item w-full lg:w-full bg-white rounded-lg shadow-lg mr-2 mb-2  inline-block"
         >
@@ -14,6 +14,7 @@
               />
             </div>
             <div class="bg-transparent absolute text-center w-full top-0 my-1 mx-1">
+              <!-- the like heart-->
               <div class="mr-2 pt-1 bg-white w-8 h-8 rounded-full float-right">
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" :class="[]" class="mx-auto  w-6 h-6">
@@ -55,7 +56,9 @@
             </span>
           </div>
         </div>
-   
+  
+      </NuxtLink>
+   </div> 
 </template>
 
 <script setup>

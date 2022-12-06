@@ -1,5 +1,6 @@
 <template>
   <div class="w-full">
+    <NewsletterModal :active="newsletter" />
     <header class="w-full fixed w-full bg-white shadow-lg z-20">
       <div class="flex gap-3 bg-black text-sm p-1 text-white">
         <h2 class="gap-2 flex">
@@ -19,14 +20,14 @@
           </svg>
           (+233) 552274951
         </h2>
-        <h2 class="gap-2 hidden lg:inline-block flex">
+        <h2 class="gap-2  lg:inline-block flex">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="text-white w-4 h-4"
+            class="text-white w-4 inline h-4"
           >
             <path
               stroke-linecap="round"
@@ -48,10 +49,10 @@
           <div class="w-full inline bg-gray-100 rounded-lg h-10">
             <input
               type="text"
-              class="inline p-2 rounded-lg bg-gray-100 w-1/2"
+              class="inline p-2 rounded-lg bg-gray-100 w-4/5"
               placeholder="I am looking for ...."
             />
-            <svg
+            <NuxtLink to="/products/"><svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -64,7 +65,7 @@
                 stroke-linejoin="round"
                 d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
               />
-            </svg>
+            </svg></NuxtLink>
           </div>
         </div>
         <div class="float-right flex">
@@ -105,7 +106,7 @@
             <span class="hidden lg:inline-block ">Account</span>
             
           </button></NuxtLink>
-          <button class="flex p-1 lg:p-3 relative flex hover:border border-b-2 hover:border-black border-white">
+          <NuxtLink to="/cart/"><button class="flex p-1 lg:p-3 relative flex hover:border border-b-2 hover:border-black border-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -124,7 +125,7 @@
 
             <span class="hidden lg:inline-block ">Basket</span>
 
-          </button>
+          </button></NuxtLink>
         </div>
       </nav>
       <div class="hidden lg:inline-block w-full p-2">
@@ -147,6 +148,10 @@
 </template>
 
 <script setup>
+const newsletter = ref(null)
+onMounted(() => {
+  setInterval(function() { newsletter.value=true},5000)
+})
 let top = "timer starts here";
   const categories = ["Clothing & Textiles"]
 
