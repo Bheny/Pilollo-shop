@@ -58,7 +58,7 @@
 
         </div>
         <div class="mb-2 rounded-full bg-yellow-400 w-1/2 flex">
-          <img src="/static/img/store.png" class="w-4 h-4 mt-1 ml-2 mr-2">
+          <img src="" class="w-4 h-4 mt-1 ml-2 mr-2">
             <span class="block">Pilollo tribe</span>
         </div>
         <div class="w-full mb-16">
@@ -207,7 +207,7 @@
 
               <div class="mb-4 flex">
                 <div>
-                  <img src="/media/default.png" class="w-16 h-16">
+                  <img src="" class="w-16 h-16">
                 </div>
                 <div class="ml-4 mb-2">
                   <span class="text-2xl block">Komla1</span>

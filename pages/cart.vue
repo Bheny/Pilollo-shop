@@ -26,7 +26,7 @@
               <div
                 class="rounded-full h-6 pl-2 mt-1 bg-yellow-400 flex p-1 text-sm"
               >
-                <img src="/static/img/store.png" class="w-4 h-4" /><span
+                <img src="" class="w-4 h-4" /><span
                   class="text-xs"
                   >Pilollo tribe</span
                 >
@@ -111,7 +111,7 @@
           <div class="p-2 mb-4 flex">
             <input type="radio" name="payment" class="bg-white" />
             <label class="ml-2 p-2 rounded border"
-              ><img src="/static/img/momo.png" class="rounded w-6 h-6"
+              ><img src="" class="rounded w-6 h-6"
             /></label>
           </div>
         </div>
