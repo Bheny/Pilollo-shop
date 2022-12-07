@@ -1,6 +1,7 @@
 <template>
   <div class="w-full">
     <NewsletterModal :active="newsletter" />
+    <ShoppingCart :active="onCart" />
     <header class="w-full fixed w-full bg-white shadow-lg z-20">
       <div class="flex gap-3 bg-black text-sm p-1 text-white">
         <h2 class="gap-2 flex">
@@ -106,7 +107,7 @@
             <span class="hidden lg:inline-block ">Account</span>
             
           </button></NuxtLink>
-          <NuxtLink to="/cart/"><button class="flex p-1 lg:p-3 relative flex hover:border border-b-2 hover:border-black border-white">
+          <button @click="openCart()" class="flex p-1 lg:p-3 relative flex hover:border border-b-2 hover:border-black border-white">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -125,7 +126,7 @@
 
             <span class="hidden lg:inline-block ">Basket</span>
 
-          </button></NuxtLink>
+          </button>
         </div>
       </nav>
       <div class="hidden lg:inline-block w-full p-2">
@@ -148,10 +149,22 @@
 </template>
 
 <script setup>
+const onCart = ref(false)
 const newsletter = ref(null)
+
 onMounted(() => {
+  // localStorage.setItem('shoppingCart')
   setInterval(function() { newsletter.value=true},5000)
 })
+
+const openCart = () => {
+  console.log("checking...",onCart.value)
+  if(onCart.value == true){
+    onCart.value=false
+  }else{
+    onCart.value=true
+  }
+}
 let top = "timer starts here";
   const categories = ["Clothing & Textiles"]
 

@@ -1,11 +1,11 @@
 <template>
    <div>
-      <NuxtLink :to="`/products/${product?.id}`">
+     
         <div 
           class="item w-full lg:w-full bg-white rounded-lg shadow-lg mr-2 mb-2  inline-block"
         >
           <!-- Top card -->
-          <div class="relative">
+          <NuxtLink :to="`/products/${product?.id}`"><div class="relative">
             <div class="h-48 ">
               <img
                   :src="product?.image"
@@ -27,7 +27,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div></NuxtLink>
           <!-- Bottom card -->
 
           <div class="p-2 bg-white">
@@ -55,9 +55,12 @@
               >GHC {{product?.price }}
             </span>
           </div>
+          <div class="w-full p-3 ">
+            <button class="mx-auto rounded-lg bg-red-700 text-white p-3 px-4">Add To Cart</button>
+          </div>
         </div>
   
-      </NuxtLink>
+      
    </div> 
 </template>
 
